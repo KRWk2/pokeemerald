@@ -14,24 +14,17 @@ struct Fanfare
     u16 duration;
 };
 
-// ewram
 EWRAM_DATA struct MusicPlayerInfo* gMPlay_PokemonCry = NULL;
 EWRAM_DATA u8 gPokemonCryBGMDuckingCounter = 0;
 
-// iwram bss
 static u16 sCurrentMapMusic;
 static u16 sNextMapMusic;
 static u8 sMapMusicState;
 static u8 sMapMusicFadeInSpeed;
 static u16 sFanfareCounter;
 
-// iwram common
 bool8 gDisableMusic;
 
-extern struct MusicPlayerInfo gMPlayInfo_BGM;
-extern struct MusicPlayerInfo gMPlayInfo_SE1;
-extern struct MusicPlayerInfo gMPlayInfo_SE2;
-extern struct MusicPlayerInfo gMPlayInfo_SE3;
 extern struct ToneData gCryTable[];
 extern struct ToneData gCryTable2[];
 
@@ -333,7 +326,7 @@ void FadeInNewBGM(u16 songNum, u8 speed)
         songNum = 0;
     m4aSongNumStart(songNum);
     m4aMPlayImmInit(&gMPlayInfo_BGM);
-    m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 0);
+    m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 0);
     m4aSongNumStop(songNum);
     m4aMPlayFadeIn(&gMPlayInfo_BGM, speed);
 }
@@ -371,7 +364,7 @@ bool8 IsBGMStopped(void)
 
 void PlayCry1(u16 species, s8 pan)
 {
-    m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 85);
+    m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 85);
     PlayCryInternal(species, pan, CRY_VOLUME, 10, 0);
     gPokemonCryBGMDuckingCounter = 2;
     RestoreBGMVolumeAfterPokemonCry();
@@ -390,7 +383,7 @@ void PlayCry3(u16 species, s8 pan, u8 mode)
     }
     else
     {
-        m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 85);
+        m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 85);
         PlayCryInternal(species, pan, CRY_VOLUME, 10, mode);
         gPokemonCryBGMDuckingCounter = 2;
         RestoreBGMVolumeAfterPokemonCry();
@@ -406,7 +399,7 @@ void PlayCry4(u16 species, s8 pan, u8 mode)
     else
     {
         if (!(gBattleTypeFlags & BATTLE_TYPE_MULTI))
-            m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 85);
+            m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 85);
         PlayCryInternal(species, pan, CRY_VOLUME, 10, mode);
     }
 }
@@ -419,7 +412,7 @@ void PlayCry6(u16 species, s8 pan, u8 mode) // not present in R/S
     }
     else
     {
-        m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 85);
+        m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 85);
         PlayCryInternal(species, pan, CRY_VOLUME, 10, mode);
         gPokemonCryBGMDuckingCounter = 2;
     }
@@ -427,7 +420,7 @@ void PlayCry6(u16 species, s8 pan, u8 mode) // not present in R/S
 
 void PlayCry5(u16 species, u8 mode)
 {
-    m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 85);
+    m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 85);
     PlayCryInternal(species, 0, CRY_VOLUME, 10, mode);
     gPokemonCryBGMDuckingCounter = 2;
     RestoreBGMVolumeAfterPokemonCry();
@@ -611,7 +604,7 @@ static void Task_DuckBGMForPokemonCry(u8 taskId)
 
     if (!IsPokemonCryPlaying(gMPlay_PokemonCry))
     {
-        m4aMPlayVolumeControl(&gMPlayInfo_BGM, 0xFFFF, 256);
+        m4aMPlayVolumeControl(&gMPlayInfo_BGM, TRACKS_ALL, 256);
         DestroyTask(taskId);
     }
 }
@@ -641,28 +634,28 @@ void PlaySE12WithPanning(u16 songNum, s8 pan)
     m4aSongNumStart(songNum);
     m4aMPlayImmInit(&gMPlayInfo_SE1);
     m4aMPlayImmInit(&gMPlayInfo_SE2);
-    m4aMPlayPanpotControl(&gMPlayInfo_SE1, 0xFFFF, pan);
-    m4aMPlayPanpotControl(&gMPlayInfo_SE2, 0xFFFF, pan);
+    m4aMPlayPanpotControl(&gMPlayInfo_SE1, TRACKS_ALL, pan);
+    m4aMPlayPanpotControl(&gMPlayInfo_SE2, TRACKS_ALL, pan);
 }
 
 void PlaySE1WithPanning(u16 songNum, s8 pan)
 {
     m4aSongNumStart(songNum);
     m4aMPlayImmInit(&gMPlayInfo_SE1);
-    m4aMPlayPanpotControl(&gMPlayInfo_SE1, 0xFFFF, pan);
+    m4aMPlayPanpotControl(&gMPlayInfo_SE1, TRACKS_ALL, pan);
 }
 
 void PlaySE2WithPanning(u16 songNum, s8 pan)
 {
     m4aSongNumStart(songNum);
     m4aMPlayImmInit(&gMPlayInfo_SE2);
-    m4aMPlayPanpotControl(&gMPlayInfo_SE2, 0xFFFF, pan);
+    m4aMPlayPanpotControl(&gMPlayInfo_SE2, TRACKS_ALL, pan);
 }
 
 void SE12PanpotControl(s8 pan)
 {
-    m4aMPlayPanpotControl(&gMPlayInfo_SE1, 0xFFFF, pan);
-    m4aMPlayPanpotControl(&gMPlayInfo_SE2, 0xFFFF, pan);
+    m4aMPlayPanpotControl(&gMPlayInfo_SE1, TRACKS_ALL, pan);
+    m4aMPlayPanpotControl(&gMPlayInfo_SE2, TRACKS_ALL, pan);
 }
 
 bool8 IsSEPlaying(void)
