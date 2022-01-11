@@ -3,6 +3,7 @@
 #include "bike.h"
 #include "coord_event_weather.h"
 #include "daycare.h"
+#include "dexnav.h"
 #include "faraway_island.h"
 #include "event_data.h"
 #include "event_object_movement.h"
@@ -28,6 +29,7 @@
 #include "trainer_see.h"
 #include "trainer_hill.h"
 #include "wild_encounter.h"
+#include "follow_me.h"
 #include "constants/event_bg.h"
 #include "constants/event_objects.h"
 #include "constants/field_poison.h"
@@ -68,6 +70,7 @@ static bool8 TryStartMiscWalkingScripts(u16);
 static bool8 TryStartStepCountScript(u16);
 static void UpdateFriendshipStepCounter(void);
 static bool8 UpdatePoisonStepCounter(void);
+static bool8 EnableAutoRun(void);
 
 void FieldClearPlayerInput(struct FieldInput *input)
 {
@@ -79,8 +82,8 @@ void FieldClearPlayerInput(struct FieldInput *input)
     input->heldDirection2 = FALSE;
     input->tookStep = FALSE;
     input->pressedBButton = FALSE;
-    input->input_field_1_0 = FALSE;
-    input->input_field_1_1 = FALSE;
+    input->pressedRButton = FALSE;
+    input->pressedLButton = FALSE;
     input->input_field_1_2 = FALSE;
     input->input_field_1_3 = FALSE;
     input->dpadDirection = 0;
@@ -104,6 +107,10 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
                 input->pressedAButton = TRUE;
             if (newKeys & B_BUTTON)
                 input->pressedBButton = TRUE;
+            if (newKeys & R_BUTTON && !FlagGet(FLAG_SYS_DEXNAV_SEARCH))
+                input->pressedRButton = TRUE;
+            if (newKeys & L_BUTTON)
+                input->pressedLButton = TRUE;
         }
 
         if (heldKeys & (DPAD_UP | DPAD_DOWN | DPAD_LEFT | DPAD_RIGHT))
@@ -185,7 +192,17 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         ShowStartMenu();
         return TRUE;
     }
+    
+    if (input->tookStep && TryFindHiddenPokemon())
+        return TRUE;
+    
     if (input->pressedSelectButton && UseRegisteredKeyItemOnField() == TRUE)
+        return TRUE;
+    
+    if (input->pressedRButton && TryStartDexnavSearch())
+        return TRUE;
+    
+    if (input->pressedLButton && EnableAutoRun())
         return TRUE;
 
     return FALSE;
@@ -287,8 +304,39 @@ static const u8 *GetInteractedObjectEventScript(struct MapPosition *position, u8
 {
     u8 objectEventId;
     const u8 *script;
-
-    objectEventId = GetObjectEventIdByXYZ(position->x, position->y, position->height);
+    s16 currX = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.x;
+    s16 currY = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y;
+    u8 currBehavior = MapGridGetMetatileBehaviorAt(currX, currY);
+        
+    switch (direction)
+    {
+    case DIR_EAST:
+        if (MetatileBehavior_IsSidewaysStairsLeftSideAny(metatileBehavior))
+            // sideways stairs left-side to your right -> check northeast
+            objectEventId = GetObjectEventIdByXYZ(currX + 1, currY - 1, position->height);
+        else if (MetatileBehavior_IsSidewaysStairsRightSideAny(currBehavior))
+            // on top of right-side stairs -> check southeast
+            objectEventId = GetObjectEventIdByXYZ(currX + 1, currY + 1, position->height);
+        else
+            // check in front of player
+            objectEventId = GetObjectEventIdByXYZ(position->x, position->y, position->height);
+        break;
+    case DIR_WEST:
+        if (MetatileBehavior_IsSidewaysStairsRightSideAny(metatileBehavior))
+            // facing sideways stairs right side -> check northwest
+            objectEventId = GetObjectEventIdByXYZ(currX - 1, currY - 1, position->height);
+        else if (MetatileBehavior_IsSidewaysStairsLeftSideAny(currBehavior))
+            // on top of left-side stairs -> check southwest
+            objectEventId = GetObjectEventIdByXYZ(currX - 1, currY + 1, position->height);
+        else
+            // check in front of player
+            objectEventId = GetObjectEventIdByXYZ(position->x, position->y, position->height);
+        break;
+    default:
+        objectEventId = GetObjectEventIdByXYZ(position->x, position->y, position->height);
+        break;
+    }
+    
     if (objectEventId == OBJECT_EVENTS_COUNT || gObjectEvents[objectEventId].localId == OBJ_EVENT_ID_PLAYER)
     {
         if (MetatileBehavior_IsCounter(metatileBehavior) != TRUE)
@@ -306,6 +354,8 @@ static const u8 *GetInteractedObjectEventScript(struct MapPosition *position, u8
 
     if (InTrainerHill() == TRUE)
         script = GetTrainerHillTrainerScript();
+    else if (objectEventId == GetFollowerObjectId())//(gObjectEvents[objectEventId].localId == OBJ_EVENT_ID_FOLLOWER)
+        script = GetFollowerScriptPointer();
     else
         script = GetObjectEventScriptPointerByObjectEventId(objectEventId);
 
@@ -447,10 +497,10 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
 
 static const u8 *GetInteractedWaterScript(struct MapPosition *unused1, u8 metatileBehavior, u8 direction)
 {
-    if (FlagGet(FLAG_BADGE05_GET) == TRUE && PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE)
+    if (FlagGet(FLAG_BADGE05_GET) == TRUE && PartyHasMonWithSurf() == TRUE && IsPlayerFacingSurfableFishableWater() == TRUE && CheckFollowerFlag(FOLLOWER_FLAG_CAN_SURF))
         return EventScript_UseSurf;
 
-    if (MetatileBehavior_IsWaterfall(metatileBehavior) == TRUE)
+    if (MetatileBehavior_IsWaterfall(metatileBehavior) == TRUE && CheckFollowerFlag(FOLLOWER_FLAG_CAN_WATERFALL))
     {
         if (FlagGet(FLAG_BADGE08_GET) == TRUE && IsPlayerSurfingNorth() == TRUE)
             return EventScript_UseWaterfall;
@@ -462,6 +512,9 @@ static const u8 *GetInteractedWaterScript(struct MapPosition *unused1, u8 metati
 
 static bool32 TrySetupDiveDownScript(void)
 {
+    if (!CheckFollowerFlag(FOLLOWER_FLAG_CAN_DIVE))
+        return FALSE;
+    
     if (FlagGet(FLAG_BADGE07_GET) && TrySetDiveWarp() == 2)
     {
         ScriptContext1_SetupScript(EventScript_UseDive);
@@ -472,6 +525,9 @@ static bool32 TrySetupDiveDownScript(void)
 
 static bool32 TrySetupDiveEmergeScript(void)
 {
+    if (!CheckFollowerFlag(FOLLOWER_FLAG_CAN_DIVE))
+        return FALSE;
+    
     if (FlagGet(FLAG_BADGE07_GET) && gMapHeader.mapType == MAP_TYPE_UNDERWATER && TrySetDiveWarp() == 1)
     {
         ScriptContext1_SetupScript(EventScript_UseDiveUnderwater);
@@ -1003,3 +1059,26 @@ int SetCableClubWarp(void)
     SetupWarp(&gMapHeader, GetWarpEventAtMapPosition(&gMapHeader, &position), &position);
     return 0;
 }
+
+extern const u8 EventScript_DisableAutoRun[];
+extern const u8 EventScript_EnableAutoRun[];
+static bool8 EnableAutoRun(void)
+{
+    if (!FlagGet(FLAG_SYS_B_DASH))
+        return FALSE;   //auto run unusable until you get running shoes
+
+    PlaySE(SE_SELECT);
+    if (gSaveBlock2Ptr->autoRun)
+    {
+        gSaveBlock2Ptr->autoRun = FALSE;
+        ScriptContext1_SetupScript(EventScript_DisableAutoRun);
+    }
+    else
+    {
+        gSaveBlock2Ptr->autoRun = TRUE;
+        ScriptContext1_SetupScript(EventScript_EnableAutoRun);
+    }
+    
+    return TRUE;
+}
+

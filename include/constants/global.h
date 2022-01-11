@@ -138,4 +138,6 @@
 #define DIR_NORTHWEST   7
 #define DIR_NORTHEAST   8
 
+#include "ghoul_config.h"
+
 #endif // GUARD_CONSTANTS_GLOBAL_H
