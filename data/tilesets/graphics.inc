@@ -1749,3 +1749,43 @@ gTilesetPalettes_Kanto2::
 	.align 2
 gTilesetTiles_Kanto2::
 	.incbin "data/tilesets/primary/kanto2/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_PalletTown::
+	.incbin "data/tilesets/secondary/pallettown/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/pallettown/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/pallettown/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/pallettown/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/pallettown/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/pallettown/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/pallettown/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/pallettown/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/pallettown/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/pallettown/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/pallettown/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/pallettown/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/pallettown/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_PalletTown::
+	.incbin "data/tilesets/secondary/pallettown/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_pallet_town::
+	.incbin "data/tilesets/secondary/pallet_town/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/pallet_town/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/pallet_town/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/pallet_town/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/pallet_town/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/pallet_town/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/pallet_town/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/pallet_town/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/pallet_town/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/pallet_town/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/pallet_town/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/pallet_town/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/pallet_town/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_pallet_town::
+	.incbin "data/tilesets/secondary/pallet_town/tiles.4bpp.lz"

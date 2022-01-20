@@ -1064,3 +1064,7 @@ Common_EventScript_LegendaryFlewAway::
     
 
 	.include "data/maps/NewMap1/scripts.inc"
+
+	.include "data/maps/NewMap2/scripts.inc"
+
+	.include "data/maps/PalletTown/scripts.inc"

@@ -4417,9 +4417,29 @@
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_Kanto",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_pallet_town",
       "border_filepath": "data/layouts/NewMap1/border.bin",
       "blockdata_filepath": "data/layouts/NewMap1/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_MAP2",
+      "name": "NewMap2_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_Kanto",
+      "secondary_tileset": "gTileset_PalletTown",
+      "border_filepath": "data/layouts/NewMap2/border.bin",
+      "blockdata_filepath": "data/layouts/NewMap2/map.bin"
+    },
+    {
+      "id": "LAYOUT_PALLET_TOWN",
+      "name": "PalletTown_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_Kanto",
+      "secondary_tileset": "gTileset_PalletTown",
+      "border_filepath": "data/layouts/PalletTown/border.bin",
+      "blockdata_filepath": "data/layouts/PalletTown/map.bin"
     }
   ]
 }

@@ -592,10 +592,12 @@
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (33 << 8))
 
 // gMapGroup_KantoTownsAndRoutes
-#define MAP_NEW_MAP1 (0 | (34 << 8))
+#define MAP_NEW_MAP1    (0 | (34 << 8))
+#define MAP_NEW_MAP2    (1 | (34 << 8))
+#define MAP_PALLET_TOWN (2 | (34 << 8))
 
 #define MAP_GROUPS_COUNT 35
 
-// static const u8 MAP_GROUP_COUNT[] = {57, 5, 5, 6, 7, 8, 9, 7, 7, 14, 8, 17, 10, 23, 13, 15, 15, 2, 2, 2, 3, 1, 1, 1, 108, 61, 89, 2, 1, 13, 1, 1, 3, 1, 1, 0};
+// static const u8 MAP_GROUP_COUNT[] = {57, 5, 5, 6, 7, 8, 9, 7, 7, 14, 8, 17, 10, 23, 13, 15, 15, 2, 2, 2, 3, 1, 1, 1, 108, 61, 89, 2, 1, 13, 1, 1, 3, 1, 3, 0};
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

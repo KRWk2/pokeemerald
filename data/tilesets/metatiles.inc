@@ -574,3 +574,17 @@ gMetatiles_Kanto2::
 	.align 1
 gMetatileAttributes_Kanto2::
 	.incbin "data/tilesets/primary/kanto2/metatile_attributes.bin"
+	.align 1
+gMetatiles_PalletTown::
+	.incbin "data/tilesets/secondary/pallettown/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_PalletTown::
+	.incbin "data/tilesets/secondary/pallettown/metatile_attributes.bin"
+	.align 1
+gMetatiles_pallet_town::
+	.incbin "data/tilesets/secondary/pallet_town/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_pallet_town::
+	.incbin "data/tilesets/secondary/pallet_town/metatile_attributes.bin"

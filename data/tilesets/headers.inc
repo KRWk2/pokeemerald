@@ -852,3 +852,25 @@ gTileset_Kanto2::
 	.4byte gMetatiles_Kanto2
 	.4byte gMetatileAttributes_Kanto2
 	.4byte NULL
+
+	.align 2
+gTileset_PalletTown::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_PalletTown
+	.4byte gTilesetPalettes_PalletTown
+	.4byte gMetatiles_PalletTown
+	.4byte gMetatileAttributes_PalletTown
+	.4byte NULL
+
+	.align 2
+gTileset_pallet_town::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_pallet_town
+	.4byte gTilesetPalettes_pallet_town
+	.4byte gMetatiles_pallet_town
+	.4byte gMetatileAttributes_pallet_town
+	.4byte NULL
