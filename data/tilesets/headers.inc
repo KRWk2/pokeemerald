@@ -830,3 +830,25 @@ gTileset_UnionRoom::
 	.4byte gMetatiles_UnionRoom
 	.4byte gMetatileAttributes_UnionRoom
 	.4byte NULL @ animation callback
+	
+	.align 2
+gTileset_Kanto::
+	.byte TRUE @ is compressed
+	.byte FALSE @ is secondary tileset
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_Kanto
+	.4byte gTilesetPalettes_Kanto
+	.4byte gMetatiles_Kanto
+	.4byte gMetatileAttributes_Kanto
+	.4byte InitTilesetAnim_Kanto
+
+	.align 2
+gTileset_Kanto2::
+	.byte TRUE @ is compressed
+	.byte FALSE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_Kanto2
+	.4byte gTilesetPalettes_Kanto2
+	.4byte gMetatiles_Kanto2
+	.4byte gMetatileAttributes_Kanto2
+	.4byte NULL

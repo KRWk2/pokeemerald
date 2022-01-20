@@ -1447,6 +1447,28 @@ const u16 gTilesetPalettes_General[][16] =
 
 const u32 gTilesetTiles_General[] = INCBIN_U32("data/tilesets/primary/general/tiles.4bpp.lz");
 
+const u16 gTilesetPalettes_Kanto[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/kanto/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/kanto/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/kanto/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/kanto/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/kanto/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/kanto/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/kanto/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/kanto/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/kanto/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/kanto/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/kanto/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/kanto/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/kanto/palettes/12.gbapal"),
+    INCBIN_U16("data/tilesets/primary/kanto/palettes/13.gbapal"),
+    INCBIN_U16("data/tilesets/primary/kanto/palettes/14.gbapal"),
+    INCBIN_U16("data/tilesets/primary/kanto/palettes/15.gbapal"),
+};
+
+const u32 gTilesetTiles_Kanto[] = INCBIN_U32("data/tilesets/primary/kanto/tiles.4bpp.lz");
+
 // trade/egg hatch
 
 const u16 gTradeGba_Pal[] = INCBIN_U16("graphics/link/gba.gbapal");

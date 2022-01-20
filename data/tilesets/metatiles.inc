@@ -557,3 +557,20 @@ gMetatiles_UnionRoom::
 	.align 1
 gMetatileAttributes_UnionRoom::
 	.incbin "data/tilesets/secondary/union_room/metatile_attributes.bin"
+
+	.align 1
+gMetatiles_Kanto::
+	.incbin "data/tilesets/primary/kanto/metatiles.bin"
+	
+	.align 1
+gMetatileAttributes_Kanto::
+	.incbin "data/tilesets/primary/kanto/metatile_attributes.bin"
+
+
+	.align 1
+gMetatiles_Kanto2::
+	.incbin "data/tilesets/primary/kanto2/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_Kanto2::
+	.incbin "data/tilesets/primary/kanto2/metatile_attributes.bin"
