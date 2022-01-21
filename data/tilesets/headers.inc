@@ -874,3 +874,25 @@ gTileset_pallet_town::
 	.4byte gMetatiles_pallet_town
 	.4byte gMetatileAttributes_pallet_town
 	.4byte NULL
+
+	.align 2
+gTileset_ViridianCity::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_ViridianCity
+	.4byte gTilesetPalettes_ViridianCity
+	.4byte gMetatiles_ViridianCity
+	.4byte gMetatileAttributes_ViridianCity
+	.4byte NULL
+
+	.align 2
+gTileset_PewterCity::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_PewterCity
+	.4byte gTilesetPalettes_PewterCity
+	.4byte gMetatiles_PewterCity
+	.4byte gMetatileAttributes_PewterCity
+	.4byte NULL

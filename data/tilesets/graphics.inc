@@ -1789,3 +1789,43 @@ gTilesetPalettes_pallet_town::
 	.align 2
 gTilesetTiles_pallet_town::
 	.incbin "data/tilesets/secondary/pallet_town/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_ViridianCity::
+	.incbin "data/tilesets/secondary/viridiancity/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/viridiancity/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/viridiancity/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/viridiancity/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/viridiancity/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/viridiancity/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/viridiancity/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/viridiancity/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/viridiancity/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/viridiancity/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/viridiancity/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/viridiancity/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/viridiancity/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_ViridianCity::
+	.incbin "data/tilesets/secondary/viridiancity/tiles.4bpp.lz"
+
+	.align 2
+gTilesetPalettes_PewterCity::
+	.incbin "data/tilesets/secondary/pewtercity/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/pewtercity/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/pewtercity/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/pewtercity/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/pewtercity/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/pewtercity/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/pewtercity/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/pewtercity/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/pewtercity/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/pewtercity/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/pewtercity/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/pewtercity/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/pewtercity/palettes/12.gbapal"
+
+	.align 2
+gTilesetTiles_PewterCity::
+	.incbin "data/tilesets/secondary/pewtercity/tiles.4bpp.lz"

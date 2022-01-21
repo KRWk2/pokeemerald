@@ -4412,26 +4412,6 @@
       "blockdata_filepath": "data/layouts/SootopolisCity_MysteryEventsHouse_1F_StairsUnblocked/map.bin"
     },
     {
-      "id": "LAYOUT_NEW_MAP1",
-      "name": "NewMap1_Layout",
-      "width": 20,
-      "height": 20,
-      "primary_tileset": "gTileset_Kanto",
-      "secondary_tileset": "gTileset_pallet_town",
-      "border_filepath": "data/layouts/NewMap1/border.bin",
-      "blockdata_filepath": "data/layouts/NewMap1/map.bin"
-    },
-    {
-      "id": "LAYOUT_NEW_MAP2",
-      "name": "NewMap2_Layout",
-      "width": 24,
-      "height": 20,
-      "primary_tileset": "gTileset_Kanto",
-      "secondary_tileset": "gTileset_PalletTown",
-      "border_filepath": "data/layouts/NewMap2/border.bin",
-      "blockdata_filepath": "data/layouts/NewMap2/map.bin"
-    },
-    {
       "id": "LAYOUT_PALLET_TOWN",
       "name": "PalletTown_Layout",
       "width": 24,
@@ -4440,6 +4420,36 @@
       "secondary_tileset": "gTileset_PalletTown",
       "border_filepath": "data/layouts/PalletTown/border.bin",
       "blockdata_filepath": "data/layouts/PalletTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_VIRIDIAN_CITY",
+      "name": "ViridianCity_Layout",
+      "width": 48,
+      "height": 40,
+      "primary_tileset": "gTileset_Kanto",
+      "secondary_tileset": "gTileset_ViridianCity",
+      "border_filepath": "data/layouts/ViridianCity/border.bin",
+      "blockdata_filepath": "data/layouts/ViridianCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_PEWTER_CITY",
+      "name": "PewterCity_Layout",
+      "width": 48,
+      "height": 40,
+      "primary_tileset": "gTileset_Kanto",
+      "secondary_tileset": "gTileset_PewterCity",
+      "border_filepath": "data/layouts/PewterCity/border.bin",
+      "blockdata_filepath": "data/layouts/PewterCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE1",
+      "name": "Route1_Layout",
+      "width": 24,
+      "height": 40,
+      "primary_tileset": "gTileset_Kanto",
+      "secondary_tileset": "gTileset_PalletTown",
+      "border_filepath": "data/layouts/Route1/border.bin",
+      "blockdata_filepath": "data/layouts/Route1/map.bin"
     }
   ]
 }

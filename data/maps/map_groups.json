@@ -624,8 +624,9 @@
     "Route124_DivingTreasureHuntersHouse"
   ],
   "gMapGroup_KantoTownsAndRoutes": [
-    "NewMap1",
-    "NewMap2",
-    "PalletTown"
+    "PalletTown",
+    "ViridianCity",
+    "PewterCity",
+    "Route1"
   ]
 }

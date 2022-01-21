@@ -1063,8 +1063,10 @@ Common_EventScript_LegendaryFlewAway::
     .include "data/scripts/dexnav.inc"
     
 
-	.include "data/maps/NewMap1/scripts.inc"
-
-	.include "data/maps/NewMap2/scripts.inc"
-
 	.include "data/maps/PalletTown/scripts.inc"
+
+	.include "data/maps/ViridianCity/scripts.inc"
+
+	.include "data/maps/PewterCity/scripts.inc"
+
+	.include "data/maps/Route1/scripts.inc"

@@ -588,3 +588,18 @@ gMetatiles_pallet_town::
 	.align 1
 gMetatileAttributes_pallet_town::
 	.incbin "data/tilesets/secondary/pallet_town/metatile_attributes.bin"
+	
+	.align 1
+gMetatiles_ViridianCity::
+	.incbin "data/tilesets/secondary/viridiancity/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_ViridianCity::
+	.incbin "data/tilesets/secondary/viridiancity/metatile_attributes.bin"
+	.align 1
+gMetatiles_PewterCity::
+	.incbin "data/tilesets/secondary/pewtercity/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_PewterCity::
+	.incbin "data/tilesets/secondary/pewtercity/metatile_attributes.bin"
