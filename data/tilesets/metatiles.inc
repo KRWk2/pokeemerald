@@ -617,3 +617,17 @@ gMetatiles_KantoGenericBuilding1::
 	.align 1
 gMetatileAttributes_KantoGenericBuilding1::
 	.incbin "data/tilesets/secondary/kantogenericbuilding1/metatile_attributes.bin"
+	.align 1
+gMetatiles_ViridianForest::
+	.incbin "data/tilesets/secondary/viridianforest/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_ViridianForest::
+	.incbin "data/tilesets/secondary/viridianforest/metatile_attributes.bin"
+	.align 1
+gMetatiles_KantoGenericBuilding2::
+	.incbin "data/tilesets/secondary/kantogenericbuilding2/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_KantoGenericBuilding2::
+	.incbin "data/tilesets/secondary/kantogenericbuilding2/metatile_attributes.bin"

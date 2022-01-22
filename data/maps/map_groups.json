@@ -36,7 +36,9 @@
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124",
     "gMapGroup_KantoTownsAndRoutes",
-    "gMapGroup_IndoorPallet"
+    "gMapGroup_IndoorPallet",
+    "gMapGroup_IndoorRoute2",
+    "gMapGroup_KantoDungeons"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -633,6 +635,14 @@
     "Route3"
   ],
   "gMapGroup_IndoorPallet": [
-    "RedGreensHouse"
+    "RedGreensHouse",
+    "RedGreensHouse_1F"
+  ],
+  "gMapGroup_IndoorRoute2": [
+    "Route2_ViridianForest_SouthEntrance",
+    "Route2_ViridianForest_NorthEntrance"
+  ],
+  "gMapGroup_KantoDungeons": [
+    "ViridianForest"
   ]
 }

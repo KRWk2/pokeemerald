@@ -4480,6 +4480,36 @@
       "secondary_tileset": "gTileset_KantoGenericBuilding1",
       "border_filepath": "data/layouts/RedGreensHouse/border.bin",
       "blockdata_filepath": "data/layouts/RedGreensHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_RED_GREENS_HOUSE_1F",
+      "name": "RedGreensHouse_1F_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_KantoBuilding",
+      "secondary_tileset": "gTileset_KantoGenericBuilding1",
+      "border_filepath": "data/layouts/RedGreensHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/RedGreensHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_VIRIDIAN_FOREST",
+      "name": "ViridianForest_Layout",
+      "width": 54,
+      "height": 69,
+      "primary_tileset": "gTileset_Kanto",
+      "secondary_tileset": "gTileset_ViridianForest",
+      "border_filepath": "data/layouts/ViridianForest/border.bin",
+      "blockdata_filepath": "data/layouts/ViridianForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE2_ENTRANCE",
+      "name": "Route2_ViridianForest_SouthEntrance_Layout",
+      "width": 15,
+      "height": 12,
+      "primary_tileset": "gTileset_KantoBuilding",
+      "secondary_tileset": "gTileset_KantoGenericBuilding2",
+      "border_filepath": "data/layouts/Route2_Entrance/border.bin",
+      "blockdata_filepath": "data/layouts/Route2_Entrance/map.bin"
     }
   ]
 }

@@ -600,10 +600,18 @@
 #define MAP_ROUTE3        (5 | (34 << 8))
 
 // gMapGroup_IndoorPallet
-#define MAP_RED_GREENS_HOUSE (0 | (35 << 8))
+#define MAP_RED_GREENS_HOUSE    (0 | (35 << 8))
+#define MAP_RED_GREENS_HOUSE_1F (1 | (35 << 8))
 
-#define MAP_GROUPS_COUNT 36
+// gMapGroup_IndoorRoute2
+#define MAP_ROUTE2_VIRIDIAN_FOREST_SOUTH_ENTRANCE (0 | (36 << 8))
+#define MAP_ROUTE2_VIRIDIAN_FOREST_NORTH_ENTRANCE (1 | (36 << 8))
 
-// static const u8 MAP_GROUP_COUNT[] = {57, 5, 5, 6, 7, 8, 9, 7, 7, 14, 8, 17, 10, 23, 13, 15, 15, 2, 2, 2, 3, 1, 1, 1, 108, 61, 89, 2, 1, 13, 1, 1, 3, 1, 6, 1, 0};
+// gMapGroup_KantoDungeons
+#define MAP_VIRIDIAN_FOREST (0 | (37 << 8))
+
+#define MAP_GROUPS_COUNT 38
+
+// static const u8 MAP_GROUP_COUNT[] = {57, 5, 5, 6, 7, 8, 9, 7, 7, 14, 8, 17, 10, 23, 13, 15, 15, 2, 2, 2, 3, 1, 1, 1, 108, 61, 89, 2, 1, 13, 1, 1, 3, 1, 6, 2, 2, 1, 0};
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

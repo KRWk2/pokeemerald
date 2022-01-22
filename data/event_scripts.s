@@ -1076,3 +1076,11 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Route3/scripts.inc"
 
 	.include "data/maps/RedGreensHouse/scripts.inc"
+
+	.include "data/maps/RedGreensHouse_1F/scripts.inc"
+
+	.include "data/maps/ViridianForest/scripts.inc"
+
+	.include "data/maps/Route2_ViridianForest_SouthEntrance/scripts.inc"
+
+	.include "data/maps/Route2_ViridianForest_NorthEntrance/scripts.inc"

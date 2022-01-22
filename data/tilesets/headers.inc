@@ -918,3 +918,25 @@ gTileset_KantoGenericBuilding1::
 	.4byte gMetatiles_KantoGenericBuilding1
 	.4byte gMetatileAttributes_KantoGenericBuilding1
 	.4byte NULL
+
+	.align 2
+gTileset_ViridianForest::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_ViridianForest
+	.4byte gTilesetPalettes_ViridianForest
+	.4byte gMetatiles_ViridianForest
+	.4byte gMetatileAttributes_ViridianForest
+	.4byte NULL
+
+	.align 2
+gTileset_KantoGenericBuilding2::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_KantoGenericBuilding2
+	.4byte gTilesetPalettes_KantoGenericBuilding2
+	.4byte gMetatiles_KantoGenericBuilding2
+	.4byte gMetatileAttributes_KantoGenericBuilding2
+	.4byte NULL
