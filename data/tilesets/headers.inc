@@ -896,3 +896,25 @@ gTileset_PewterCity::
 	.4byte gMetatiles_PewterCity
 	.4byte gMetatileAttributes_PewterCity
 	.4byte NULL
+
+	.align 2
+gTileset_KantoBuilding::
+	.byte TRUE @ is compressed
+	.byte FALSE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_KantoBuilding
+	.4byte gTilesetPalettes_KantoBuilding
+	.4byte gMetatiles_KantoBuilding
+	.4byte gMetatileAttributes_KantoBuilding
+	.4byte NULL
+
+	.align 2
+gTileset_KantoGenericBuilding1::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_KantoGenericBuilding1
+	.4byte gTilesetPalettes_KantoGenericBuilding1
+	.4byte gMetatiles_KantoGenericBuilding1
+	.4byte gMetatileAttributes_KantoGenericBuilding1
+	.4byte NULL

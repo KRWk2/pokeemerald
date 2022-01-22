@@ -4450,6 +4450,36 @@
       "secondary_tileset": "gTileset_PalletTown",
       "border_filepath": "data/layouts/Route1/border.bin",
       "blockdata_filepath": "data/layouts/Route1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE2",
+      "name": "Route2_Layout",
+      "width": 24,
+      "height": 80,
+      "primary_tileset": "gTileset_Kanto",
+      "secondary_tileset": "gTileset_ViridianCity",
+      "border_filepath": "data/layouts/Route2/border.bin",
+      "blockdata_filepath": "data/layouts/Route2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE3",
+      "name": "Route3_Layout",
+      "width": 84,
+      "height": 20,
+      "primary_tileset": "gTileset_Kanto",
+      "secondary_tileset": "gTileset_PewterCity",
+      "border_filepath": "data/layouts/Route3/border.bin",
+      "blockdata_filepath": "data/layouts/Route3/map.bin"
+    },
+    {
+      "id": "LAYOUT_RED_GREENS_HOUSE",
+      "name": "RedGreensHouse_Layout",
+      "width": 12,
+      "height": 10,
+      "primary_tileset": "gTileset_KantoBuilding",
+      "secondary_tileset": "gTileset_KantoGenericBuilding1",
+      "border_filepath": "data/layouts/RedGreensHouse/border.bin",
+      "blockdata_filepath": "data/layouts/RedGreensHouse/map.bin"
     }
   ]
 }

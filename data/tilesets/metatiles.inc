@@ -603,3 +603,17 @@ gMetatiles_PewterCity::
 	.align 1
 gMetatileAttributes_PewterCity::
 	.incbin "data/tilesets/secondary/pewtercity/metatile_attributes.bin"
+	.align 1
+gMetatiles_KantoBuilding::
+	.incbin "data/tilesets/primary/kantobuilding/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_KantoBuilding::
+	.incbin "data/tilesets/primary/kantobuilding/metatile_attributes.bin"
+	.align 1
+gMetatiles_KantoGenericBuilding1::
+	.incbin "data/tilesets/secondary/kantogenericbuilding1/metatiles.bin"
+
+	.align 1
+gMetatileAttributes_KantoGenericBuilding1::
+	.incbin "data/tilesets/secondary/kantogenericbuilding1/metatile_attributes.bin"
