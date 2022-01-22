@@ -12,6 +12,7 @@
 #include "constants/pokedex.h"
 #include "constants/berry.h"
 #include "constants/maps.h"
+
 #include "constants/pokemon.h"
 #include "constants/easy_chat.h"
 
@@ -32,6 +33,9 @@
                                         // saveblock2 total: 1236 bytes
                                         
                                         //grand total: 3082
+										
+#include "constants/expansion_branches.h"
+
 
 // Prevent cross-jump optimization.
 #define BLOCK_CROSS_JUMP asm("");
@@ -75,6 +79,7 @@
 
 // Converts a number to Q4.12 fixed-point format
 #define Q_4_12(n)  ((s16)((n) * 4096))
+#define UQ_4_12(n)  ((u16)((n) * 4096))
 
 // Converts a number to Q24.8 fixed-point format
 #define Q_24_8(n)  ((s32)((n) << 8))
@@ -84,9 +89,14 @@
 
 // Converts a Q4.12 fixed-point format number to a regular integer
 #define Q_4_12_TO_INT(n)  ((int)((n) / 4096))
+#define UQ_4_12_TO_INT(n)  ((int)((n) / 4096))
 
 // Converts a Q24.8 fixed-point format number to a regular integer
 #define Q_24_8_TO_INT(n) ((int)((n) >> 8))
+
+// Rounding value for Q4.12 fixed-point format
+#define Q_4_12_ROUND ((1) << (12 - 1))
+#define UQ_4_12_ROUND ((1) << (12 - 1))
 
 #define min(a, b) ((a) < (b) ? (a) : (b))
 #define max(a, b) ((a) >= (b) ? (a) : (b))
@@ -1066,9 +1076,9 @@ struct SaveBlock1
     /*0x31B3*/ struct ExternalEventData externalEventData;
     /*0x31C7*/ struct ExternalEventFlags externalEventFlags;
     /*0x31DC*/ struct Roamer roamer;
-    #ifndef FREE_ENIGMA_BERRY
+//    #ifndef FREE_ENIGMA_BERRY
     /*0x31F8*/ struct EnigmaBerry enigmaBerry;  //52 bytes
-    #endif
+//    #endif
     #ifndef FREE_MYSTERY_EVENT_BUFFERS
     /*0x322C*/ struct MysteryGiftSave mysteryGift;   //876 bytes
     #endif
