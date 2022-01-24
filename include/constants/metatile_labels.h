@@ -389,9 +389,6 @@
 #define METATILE_Pacifidlog_SubmergedLogs_VerticalBottom       0x262
 #define METATILE_Pacifidlog_SubmergedLogs_VerticalTop          0x25A
 
-// gTileset_PalletTown
-#define METATILE_PalletTown_Door  0x2A3
-
 // gTileset_PetalburgGym
 #define METATILE_PetalburgGym_RoomEntrance_Left   0x210
 #define METATILE_PetalburgGym_RoomEntrance_Right  0x211
