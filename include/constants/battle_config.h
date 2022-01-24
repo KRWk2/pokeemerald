@@ -168,8 +168,8 @@
 
 // Ability settings
 #define B_EXPANDED_ABILITY_NAMES    TRUE  // If TRUE, ability names are increased from 12 characters to 16 characters.
-#define B_ABILITY_WEATHER           GEN_7 // In Gen6+, ability-induced weather lasts 5 turns. Before, it lasted until the battle ended or until it was changed by a move or a different weather-affecting ability.
-#define B_GALE_WINGS                GEN_7 // In Gen7+ requires full HP to trigger.
+#define B_ABILITY_WEATHER           GEN_5 // In Gen6+, ability-induced weather lasts 5 turns. Before, it lasted until the battle ended or until it was changed by a move or a different weather-affecting ability.
+#define B_GALE_WINGS                GEN_6 // In Gen7+ requires full HP to trigger.
 #define B_STANCE_CHANGE_FAIL        GEN_7 // In Gen7+, Stance Change fails if the Pokémon is unable to use a move because of confusion, paralysis, etc. In Gen6, it doesn't.
 #define B_SHADOW_TAG_ESCAPE         GEN_7 // In Gen4+, if both sides have a Pokémon with Shadow Tag, all battlers can escape. Before, neither side could escape this situation.
 #define B_MOODY_ACC_EVASION         GEN_8 // In Gen8, Moody CANNOT raise Accuracy and Evasion anymore.
@@ -214,7 +214,7 @@
 // Terrain settings
 #define B_TERRAIN_BG_CHANGE         TRUE  // If set to TRUE, terrain moves permanently change the default battle background until the effect fades.
 #define B_THUNDERSTORM_TERRAIN      TRUE  // If TRUE, overworld Thunderstorm generates Rain and Electric Terrain as in Gen 8.
-#define B_TERRAIN_TYPE_BOOST        GEN_8 // In Gen8, damage is boosted by 30% instead of 50%.
+#define B_TERRAIN_TYPE_BOOST        GEN_7 // In Gen8, damage is boosted by 30% instead of 50%.
 #define B_SECRET_POWER_EFFECT       GEN_7 // Secret Power's effects change depending on terrain and generation. See GetSecretPowerMoveEffect.
 #define B_SECRET_POWER_ANIMATION    GEN_7 // Secret Power's animations change depending on terrain and generation.
 #define B_NATURE_POWER_MOVES        GEN_8 // Nature Power calls different moves depending on terrain and generation. See sNaturePowerMoves.
@@ -236,7 +236,7 @@
 #define B_LAST_USED_BALL_BUTTON     R_BUTTON // If last used ball is implemented, this button (or button combo) will trigger throwing the last used ball.
 
 // Other settings
-#define B_DOUBLE_WILD_CHANCE        0     // % chance of encountering two Pokémon in a Wild Encounter.
+#define B_DOUBLE_WILD_CHANCE        100     // % chance of encountering two Pokémon in a Wild Encounter.
 #define B_MULTI_BATTLE_WHITEOUT     GEN_8 // In Gen4+, multi battles end when the Player and also their Partner don't have any more Pokémon to fight.
 
 // Animation Settings
