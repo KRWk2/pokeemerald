@@ -24,10 +24,12 @@ struct GFRomHeader
     u32 flagsOffset;
     u32 varsOffset;
     u32 pokedexOffset;
+	
     #ifndef FREE_EXTRA_SEEN_FLAGS
     u32 seen1Offset;
     #endif
     u32 seen2Offset;
+	
     u32 pokedexVar;
     u32 pokedexFlag;
     u32 mysteryEventFlag;
@@ -111,6 +113,7 @@ static const struct GFRomHeader sGFRomHeader = {
     #ifndef FREE_EXTRA_SEEN_FLAGS
     .seen1Offset = offsetof(struct SaveBlock1, seen1),
     #endif
+//    .seenOffset = offsetof(struct SaveBlock1, dexSeen), HERE
     .pokedexVar = VAR_NATIONAL_DEX - VARS_START,
     .pokedexFlag = FLAG_RECEIVED_POKEDEX_FROM_BIRCH,
     .mysteryEventFlag = FLAG_SYS_MYSTERY_EVENT_ENABLE,

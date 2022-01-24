@@ -259,6 +259,7 @@ static const u8 sAsOneShadowRiderDescription[] = _("Unnerve and Grim Neigh.");
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
     [ABILITY_NONE] = _("-------"),
+	
     [ABILITY_STENCH] = _("Stench"),
     [ABILITY_DRIZZLE] = _("Drizzle"),
     [ABILITY_SPEED_BOOST] = _("Speed Boost"),

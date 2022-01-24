@@ -12,6 +12,7 @@
 #include "constants/pokedex.h"
 #include "constants/berry.h"
 #include "constants/maps.h"
+#include "constants/expansion_branches.h"
 
 #include "constants/pokemon.h"
 #include "constants/easy_chat.h"
@@ -156,9 +157,10 @@
 
 #define ROUND_BITS_TO_BYTES(numBits) DIV_ROUND_UP(numBits, 8)
 
+
 // NUM_DEX_FLAG_BYTES allocates more flags than it needs to, as NUM_SPECIES includes the "old unown"
 // values that don't appear in the Pokedex. NATIONAL_DEX_COUNT does not include these values.
-#define NUM_DEX_FLAG_BYTES ROUND_BITS_TO_BYTES(NUM_SPECIES)
+#define NUM_DEX_FLAG_BYTES ROUND_BITS_TO_BYTES(NUM_SPECIES) // POKEMON_SLOTS_NUMBER?
 #define NUM_FLAG_BYTES ROUND_BITS_TO_BYTES(FLAGS_COUNT)
 #define NUM_ADDITIONAL_PHRASE_BYTES ROUND_BITS_TO_BYTES(NUM_ADDITIONAL_PHRASES)
 
@@ -215,8 +217,9 @@ struct Pokedex
     /*0x04*/ u32 unownPersonality; // set when you first see Unown
     /*0x08*/ u32 spindaPersonality; // set when you first see Spinda
     /*0x0C*/ u32 unknown3;
-    /*0x10*/ u8 owned[NUM_DEX_FLAG_BYTES];
-    /*0x44*/ u8 seen[NUM_DEX_FLAG_BYTES];
+//    /*0x10*/ u8 owned[NUM_DEX_FLAG_BYTES];
+//    /*0x44*/ u8 seen[NUM_DEX_FLAG_BYTES];
+    /*0x10*/ u8 filler[0x68]; // Previously Dex Flags, feel free to remove.
 };
 
 struct PokemonJumpRecords
@@ -1023,6 +1026,7 @@ struct SaveBlock1
     #ifndef FREE_EXTRA_SEEN_FLAGS
     /*0x988*/ u8 seen1[DEX_FLAGS_NO];   //52 bytes
     #endif
+//    /*0x988*/ u8 filler1[0x34]; // Previously Dex Flags, feel free to remove.
     /*0x9BC*/ u16 berryBlenderRecords[3];
     /*0x9C2*/ u8 unused_9C2[6];
     #ifndef FREE_MATCH_CALL
@@ -1076,6 +1080,7 @@ struct SaveBlock1
     /*0x31B3*/ struct ExternalEventData externalEventData;
     /*0x31C7*/ struct ExternalEventFlags externalEventFlags;
     /*0x31DC*/ struct Roamer roamer;
+	
 //    #ifndef FREE_ENIGMA_BERRY
     /*0x31F8*/ struct EnigmaBerry enigmaBerry;  //52 bytes
 //    #endif
