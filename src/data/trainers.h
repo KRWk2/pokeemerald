@@ -1,7 +1,7 @@
 const struct Trainer gTrainers[] = {
     [TRAINER_NONE] =
     {
-        .trainerClass = TRAINER_CLASS_PKMN_TRAINER_1,
+        .trainerClass = TRAINER_CLASS_KANTO_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_HIKER,
         .trainerName = _(""),
@@ -12,17 +12,17 @@ const struct Trainer gTrainers[] = {
         .party = {.TrainerMon = NULL},
     },
 
-    [TRAINER_SAWYER_1] =
+    [TRAINER_TEST] =
     {
-        .trainerClass = TRAINER_CLASS_HIKER,
+        .trainerClass = TRAINER_CLASS_KANTO_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_HIKER,
         .trainerPic = TRAINER_PIC_HIKER,
-        .trainerName = _("SAWYER"),
+        .trainerName = _("Brock"),
         .items = {},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .partySize = ARRAY_COUNT(sParty_Sawyer1),
-        .party = {.TrainerMon = sParty_Sawyer1},
+        .partySize = ARRAY_COUNT(sParty_Test),
+        .party = {.TrainerMon = sParty_Test},
     },
 
     [TRAINER_GRUNT_AQUA_HIDEOUT_1] =

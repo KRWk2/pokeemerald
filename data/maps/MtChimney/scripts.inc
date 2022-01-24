@@ -512,26 +512,26 @@ MtChimney_EventScript_Grunt1::
 	msgbox MtChimney_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
 	end
 
-MtChimney_EventScript_Sawyer::
-	trainerbattle_single TRAINER_SAWYER_1, MtChimney_Text_SawyerIntro, MtChimney_Text_SawyerDefeat, MtChimney_EventScript_SawyerDefeated
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, MtChimney_EventScript_SawyerRematch
-	msgbox MtChimney_Text_SawyerPostBattle, MSGBOX_DEFAULT
-	release
-	end
+@MtChimney_EventScript_Sawyer::
+@	trainerbattle_single TRAINER_SAWYER_1, MtChimney_Text_SawyerIntro, MtChimney_Text_SawyerDefeat, MtChimney_EventScript_SawyerDefeated
+@	specialvar VAR_RESULT, ShouldTryRematchBattle
+@	goto_if_eq VAR_RESULT, TRUE, MtChimney_EventScript_SawyerRematch
+@	msgbox MtChimney_Text_SawyerPostBattle, MSGBOX_DEFAULT
+@	release
+@	end
 
-MtChimney_EventScript_SawyerDefeated::
-	special PlayerFaceTrainerAfterBattle
-	waitmovement 0
-	msgbox MtChimney_Text_SawyerRegister, MSGBOX_DEFAULT
-	register_matchcall TRAINER_SAWYER_1
-	release
-	end
+@MtChimney_EventScript_SawyerDefeated::
+@	special PlayerFaceTrainerAfterBattle
+@	waitmovement 0
+@	msgbox MtChimney_Text_SawyerRegister, MSGBOX_DEFAULT
+@	register_matchcall TRAINER_SAWYER_1
+@	release
+@	end
 
-MtChimney_EventScript_SawyerRematch::
-	trainerbattle_rematch TRAINER_SAWYER_1, MtChimney_Text_SawyerRematchIntro, MtChimney_Text_SawyerRematchDefeat
-	msgbox MtChimney_Text_SawyerPostRematch, MSGBOX_AUTOCLOSE
-	end
+@MtChimney_EventScript_SawyerRematch::
+@	trainerbattle_rematch TRAINER_SAWYER_1, MtChimney_Text_SawyerRematchIntro, MtChimney_Text_SawyerRematchDefeat
+@	msgbox MtChimney_Text_SawyerPostRematch, MSGBOX_AUTOCLOSE
+@	end
 
 MtChimney_Text_MeteoriteWillActivateVolcano:
 	.string "The power contained in the METEORITE…\p"
@@ -817,30 +817,30 @@ MtChimney_Text_ShirleyPostBattle:
 	.string "hot springs. Want to join me?\p"
 	.string "Just joking!$"
 
-MtChimney_Text_SawyerIntro:
-	.string "This is one fine mountain! Plenty of\n"
-	.string "hot people around for company!$"
+@MtChimney_Text_SawyerIntro:
+@	.string "This is one fine mountain! Plenty of\n"
+@	.string "hot people around for company!$"
 
-MtChimney_Text_SawyerDefeat:
-	.string "Oh, you're a real firebrand, too!$"
+@MtChimney_Text_SawyerDefeat:
+@	.string "Oh, you're a real firebrand, too!$"
 
-MtChimney_Text_SawyerPostBattle:
-	.string "I think I need a dip in LAVARIDGE\n"
-	.string "HOT SPRING with the locals!$"
+@MtChimney_Text_SawyerPostBattle:
+@	.string "I think I need a dip in LAVARIDGE\n"
+@	.string "HOT SPRING with the locals!$"
 
-MtChimney_Text_SawyerRegister:
-	.string "I like little fireballs like you.\n"
-	.string "Let me register you in my POKéNAV.$"
+@MtChimney_Text_SawyerRegister:
+@	.string "I like little fireballs like you.\n"
+@	.string "Let me register you in my POKéNAV.$"
 
-MtChimney_Text_SawyerRematchIntro:
-	.string "I'm happily surrounded by hot people\n"
-	.string "around these parts. I won't lose!$"
+@MtChimney_Text_SawyerRematchIntro:
+@	.string "I'm happily surrounded by hot people\n"
+@	.string "around these parts. I won't lose!$"
 
-MtChimney_Text_SawyerRematchDefeat:
-	.string "Gosh, you're still the same\n"
-	.string "firebrand as before!$"
+@MtChimney_Text_SawyerRematchDefeat:
+@	.string "Gosh, you're still the same\n"
+@	.string "firebrand as before!$"
 
-MtChimney_Text_SawyerPostRematch:
-	.string "Actually, it really is hot here.\n"
-	.string "I'm overdressed for these parts.$"
+@MtChimney_Text_SawyerPostRematch:
+@	.string "Actually, it really is hot here.\n"
+@	.string "I'm overdressed for these parts.$"
 

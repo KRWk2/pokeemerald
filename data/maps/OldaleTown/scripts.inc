@@ -36,6 +36,11 @@ OldaleTown_EventScript_CitySign::
 OldaleTown_EventScript_Girl::
 	msgbox OldaleTown_Text_SavingMyProgress, MSGBOX_NPC
 	end
+	
+BrockTestNPC::
+	trainerbattle_single TRAINER_TEST, BrockTest, BrockTest, MUS_RG_ENCOUNTER_GYM_LEADER
+	end
+	
 
 OldaleTown_EventScript_MartEmployee::
 	lock
@@ -398,4 +403,8 @@ OldaleTown_Text_BrendanLetsGoBack:
 OldaleTown_Text_CitySign:
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
+	
+BrockTest:
+	.string "big chungus$"
+	
 

@@ -1,6 +1,6 @@
-static const struct TrainerMon sParty_Sawyer1[] = {
+static const struct TrainerMon sParty_Test[] = {
     {
-    .iv = 0,
+    .iv = 255,
     .lvl = 21,
     .species = SPECIES_GEODUDE,
     }
