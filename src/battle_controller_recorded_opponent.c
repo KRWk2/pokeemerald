@@ -27,6 +27,7 @@
 #include "window.h"
 #include "constants/battle_anim.h"
 #include "constants/songs.h"
+#include "constants/sound.h"
 #include "constants/trainers.h"
 
 static void RecordedOpponentHandleGetMonData(void);

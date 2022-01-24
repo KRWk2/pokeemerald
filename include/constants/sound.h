@@ -1,6 +1,6 @@
 #ifndef GUARD_CONSTANTS_SOUND_H
 #define GUARD_CONSTANTS_SOUND_H
-
+/*
 #define FANFARE_LEVEL_UP             0
 #define FANFARE_OBTAIN_ITEM          1
 #define FANFARE_EVOLVED              2
@@ -19,7 +19,7 @@
 #define FANFARE_OBTAIN_B_POINTS     15
 #define FANFARE_OBTAIN_SYMBOL       16
 #define FANFARE_REGISTER_MATCH_CALL 17
-
+*/
 #define CRY_MODE_NORMAL        0 // Default
 #define CRY_MODE_DOUBLES       1 // Shortened cry for double battles
 #define CRY_MODE_ENCOUNTER     2 // Used when starting a static encounter, or when a Pokémon is "aggressive"

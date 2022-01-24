@@ -3,6 +3,7 @@
 *.i
 *.elf
 *.gba
+*.gba.bak
 *.sgm
 *.sa1
 *.ss[0-9]
@@ -34,6 +35,7 @@ porymap.project.cfg
 *.a
 .fuse_hidden*
 *.sna
+log.txt
 *.diff
 *.sym
 *.js
