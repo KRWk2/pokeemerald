@@ -1,4 +1,10 @@
 import os
+"""
+Yes, this code is bad
+I wrote it at like 2am
+i was tired
+leave me alone
+"""
 
 SPECIES_H = "C:/Users/Kai/Documents/GitHub/pokeemerald-2/include/constants/species.h"
 NUM_NATIONAL_DEX = 901
