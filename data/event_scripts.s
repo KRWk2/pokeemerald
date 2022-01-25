@@ -1085,3 +1085,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Route2_ViridianForest_SouthEntrance/scripts.inc"
 
 	.include "data/maps/Route2_ViridianForest_NorthEntrance/scripts.inc"
+
+	.include "data/maps/RusturfTunnel_B1F/scripts.inc"
