@@ -9,6 +9,8 @@ RusturfTunnel_B1F_TotemBattle::
 	closemessage
 	settotemboost 1, 1, 0
 	setwildbattle SPECIES_RAYQUAZA_MEGA, 100, ITEM_LIFE_ORB
+	setflag FLAG_SYS_NO_CATCHING
+	setflag FLAG_SYS_NO_BAG_USE
 	dowildbattle
 	end
 

@@ -422,6 +422,7 @@ static void DoStandardWildBattle(bool32 isDouble)
     TryUpdateGymLeaderRematchFromWild();
 }
 
+
 void BattleSetup_StartRoamerBattle(void)
 {
     ScriptContext2_Enable();
@@ -569,12 +570,12 @@ void StartGroudonKyogreBattle(void)
 {
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
-    gBattleTypeFlags = BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_KYOGRE_GROUDON;
-
+    gBattleTypeFlags = BATTLE_TYPE_LEGENDARY;// | BATTLE_TYPE_KYOGRE_GROUDON;
+/*
     if (gGameVersion == VERSION_RUBY)
         CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_VS_KYOGRE_GROUDON); // GROUDON
-    else
-        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_VS_KYOGRE_GROUDON); // KYOGRE
+    else*/
+	CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_VS_KYOGRE_GROUDON); // KYOGRE
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);

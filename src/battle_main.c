@@ -3844,6 +3844,12 @@ u8 IsRunningFromBattleImpossible(void)
         holdEffect = ItemId_GetHoldEffect(gBattleMons[gActiveBattler].item);
 
     gPotentialItemEffectBattler = gActiveBattler;
+	
+	if (gBattleTypeFlags & BATTLE_TYPE_TOTEM) // Can't run from a totem battle
+	{
+		gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_CANT_ESCAPE;
+		return 1;
+	}
 
     if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE) // Cannot ever run from saving Birch's battle.
     {
@@ -4040,7 +4046,7 @@ static void HandleTurnActionSelectionState(void)
 //                    #else
 //                    if (gBattleTypeFlags & (BATTLE_TYPE_LINK //DEBUG
 
-                    if ((gBattleTypeFlags & (BATTLE_TYPE_LINK
+                    if (FlagGet(FLAG_SYS_NO_BAG_USE) ||(gBattleTypeFlags & (BATTLE_TYPE_LINK
 					
                                             | BATTLE_TYPE_FRONTIER_NO_PYRAMID
                                             | BATTLE_TYPE_EREADER_TRAINER
