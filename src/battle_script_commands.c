@@ -13383,10 +13383,11 @@ static void Cmd_handleballthrow(void)
         #ifdef POKEMON_EXPANSION
         if (gBaseStats[gBattleMons[gBattlerTarget].species].flags & FLAG_ULTRA_BEAST)
         {
-            if (gLastUsedItem == ITEM_BEAST_BALL)
-                ballMultiplier = 50;
-            else
-                ballMultiplier = 1;
+			// ITEM_EXPANSION
+  //          if (gLastUsedItem == ITEM_BEAST_BALL)
+  //              ballMultiplier = 50;
+  //          else
+            ballMultiplier = 1;
         }
         else
         {

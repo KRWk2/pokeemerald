@@ -4320,7 +4320,7 @@ s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID)
 
         break;
     case FLAG_SET_CAUGHT:
-        gSaveBlock1Ptr->dexCaught[index] |= mask;
+        gSaveBlock2Ptr->pokedex.owned[index] |= mask; // gSaveBlock1Ptr->dexCaught
         break;
     }
 

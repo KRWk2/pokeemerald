@@ -100,7 +100,7 @@
     #define ITEM_OVAL_STONE          10068
 
     //FORM_ITEM_HOLD
-    #define ITEM_GRISEOUS_ORB        10069
+//    #define ITEM_GRISEOUS_ORB        10069
     #define ITEM_DRACO_PLATE         10070
     #define ITEM_DREAD_PLATE         10071
     #define ITEM_EARTH_PLATE         10072

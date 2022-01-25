@@ -698,10 +698,10 @@ void BattleLoadOpponentMonSpriteGfx(struct Pokemon *mon, u8 battlerId)
     BattleLoadMonSpriteGfx(mon, battlerId, TRUE);
 }
 
-void BattleLoadPlayerMonSpriteGfx(struct Pokemon *mon, u8 battlerId)
-{
-    BattleLoadMonSpriteGfx(mon, battlerId, FALSE);
-}
+//void BattleLoadPlayerMonSpriteGfx(struct Pokemon *mon, u8 battlerId)
+//{
+//    BattleLoadMonSpriteGfx(mon, battlerId, FALSE);
+//}
 
 void BattleGfxSfxDummy2(u16 species)
 {
@@ -938,7 +938,7 @@ void HandleSpeciesGfxDataChange(u8 battlerAtk, u8 battlerDef, bool8 castform, bo
         personalityValue = gContestResources->moveAnim->personality;
         otId = gContestResources->moveAnim->otId;
 
-        HandleLoadSpecialPokePic_DontHandleDeoxys(&gMonBackPicTable[targetSpecies],
+        HandleLoadSpecialPokePic(&gMonBackPicTable[targetSpecies], // HandleLoadSpecialPokePic_DontHandleDeoxys
                                                   gMonSpritesGfxPtr->sprites.ptr[position],
                                                   targetSpecies,
                                                   gContestResources->moveAnim->targetPersonality);
@@ -980,24 +980,14 @@ void HandleSpeciesGfxDataChange(u8 battlerAtk, u8 battlerDef, bool8 castform, bo
                                                       targetSpecies,
                                                       gTransformedPersonalities[battlerAtk]);
 */
-                HandleLoadSpecialPokePic(&gMonBackPicTable[targetSpecies],
-                                         gMonSpritesGfxPtr->sprites.ptr[position],
-                                         targetSpecies,
-                                         gTransformedPersonalities[battlerAtk]);
-            }
-            else
-            {
-                personalityValue = GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_PERSONALITY);
-                otId = GetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_OT_ID);
-
-                HandleLoadSpecialPokePic(&gMonFrontPicTable[targetSpecies],
-                                         gMonSpritesGfxPtr->sprites.ptr[position],
-                                         targetSpecies,
-                                         gTransformedPersonalities[battlerAtk]);
-            }
-			
+            HandleLoadSpecialPokePic(&gMonBackPicTable[targetSpecies],
+                                     gMonSpritesGfxPtr->sprites.ptr[position],
+                                     targetSpecies,
+                                     gTransformedPersonalities[battlerAtk]);
         }
+			
     }
+
 
     if (castform)
     {
