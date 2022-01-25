@@ -3198,7 +3198,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
 					
                         || gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY
 /*
-                        || gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY_E_READER
+                        || gBattleMons[gBattlerTarget].item == ITEM_ENIGMA_BERRY
                         || IS_ITEM_MAIL(gBattleMons[gBattlerTarget].item)
 */
                         || gBattleMons[gBattlerTarget].item == 0)
@@ -3907,7 +3907,7 @@ static void Cmd_getexp(void)
                 if (item == ITEM_ENIGMA_BERRY)
                     #ifndef FREE_ENIGMA_BERRY
 /*
-                if (item == ITEM_ENIGMA_BERRY_E_READER)
+                if (item == ITEM_ENIGMA_BERRY)
 */
                     holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
                     #else
@@ -3964,7 +3964,7 @@ static void Cmd_getexp(void)
             if (item == ITEM_ENIGMA_BERRY)
                 #ifndef FREE_ENIGMA_BERRY
 /*
-            if (item == ITEM_ENIGMA_BERRY_E_READER)
+            if (item == ITEM_ENIGMA_BERRY)
 */
                 holdEffect = gSaveBlock1Ptr->enigmaBerry.holdEffect;
                 #else

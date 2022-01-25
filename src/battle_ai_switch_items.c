@@ -837,7 +837,7 @@ static bool8 ShouldUseItem(void)
         if (item == ITEM_ENIGMA_BERRY)
             #ifndef FREE_ENIGMA_BERRY
 		
-//      if (item == ITEM_ENIGMA_BERRY_E_READER)
+//      if (item == ITEM_ENIGMA_BERRY)
 	
             itemEffects = gSaveBlock1Ptr->enigmaBerry.itemEffect;
             #else
