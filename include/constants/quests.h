@@ -13,15 +13,15 @@
 #define QUEST_MENU_CHECK_COMPLETE       8   //checks if questId has been completed. Returns result to gSpecialVar_Result
 
 // quest number defines
-#define SIDE_QUEST_1          0
-#define SIDE_QUEST_2          1
-#define SIDE_QUEST_3          2
-#define SIDE_QUEST_4          3
-#define SIDE_QUEST_5          4
-#define SIDE_QUEST_6          5
-#define SIDE_QUEST_7          6
-#define SIDE_QUEST_8          7
-#define SIDE_QUEST_9          8
+#define Q_GYM_1          	  0
+#define Q_GYM_2          	  1
+#define Q_GYM_3          	  2
+#define Q_GYM_4          	  3
+#define Q_GYM_5          	  4
+#define Q_GYM_6          	  5
+#define Q_GYM_7   	     	  6
+#define Q_GYM_8     	   	  7
+#define Q_TOTEM_1	          8
 #define SIDE_QUEST_10         9
 #define SIDE_QUEST_11        10
 #define SIDE_QUEST_12        11

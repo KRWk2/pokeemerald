@@ -7633,7 +7633,8 @@ u16 GetBattleBGM(void)
             return BW_SEQ_BGM_VS_RAI;
         #endif
         default:
-            return MUS_VS_WILD;
+//            return MUS_VS_WILD; RSE
+			return BW_SEQ_BGM_VS_NORAPOKE;
         }
     }
 }

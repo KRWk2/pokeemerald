@@ -111,6 +111,7 @@
  *  - Spawn Task_NewGameBirchSpeech_FadeInTarget1OutTarget2
  *  - Spawn Task_NewGameBirchSpeech_FadePlatformOut
  *  - Both of these tasks destroy themselves when done.
+   add thing here?
  * Task_NewGameBirchSpeech_WaitForSpriteFadeInWelcome
  * Task_NewGameBirchSpeech_ThisIsAPokemon
  *  - When the text is done printing, spawns Task_NewGameBirchSpeechSub_InitPokeball
@@ -1287,7 +1288,8 @@ static void Task_NewGameBirchSpeech_Init(u8 taskId)
     gTasks[taskId].tPlayerSpriteId = SPRITE_NONE;
     gTasks[taskId].data[3] = 0xFF;
     gTasks[taskId].tTimer = 0xD8;
-    PlayBGM(MUS_ROUTE122);
+//    PlayBGM(MUS_ROUTE122); RSE
+	PlayBGM(BW_SEQ_BGM_STARTING2); // BW
     ShowBg(0);
     ShowBg(1);
 }

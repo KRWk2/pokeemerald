@@ -11,12 +11,22 @@ RustboroCity_MapScripts::
 	.byte 0
 
 RustboroCity_OnTransition:
+	checkflag FLAG_VISITED_RUSTBORO_CITY
+	compare VAR_RESULT, 0
+	goto_if_ne D_1
+	return
+	
 	setflag FLAG_VISITED_RUSTBORO_CITY
 	call Common_EventScript_SetupRivalGfxId
 	call_if_eq VAR_RUSTBORO_CITY_STATE, 6, RustboroCity_EventScript_HideMapNamePopup
 	getplayerxy VAR_TEMP_0, VAR_TEMP_1
 	goto_if_eq VAR_RUSTBORO_CITY_STATE, 6, RustboroCity_EventScript_PositionScientistForExit
 	end
+
+D_1:
+	questmenu QUEST_MENU_UNLOCK_QUEST Q_GYM_1
+	openquestmenu
+	return
 
 RustboroCity_EventScript_PositionScientistForExit::
 	goto_if_eq VAR_TEMP_0, 11, RustboroCity_EventScript_PositionScientistLeftExit

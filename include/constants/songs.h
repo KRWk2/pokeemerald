@@ -572,7 +572,7 @@
 #define HG_SEQ_GS_EYE_J_SHOUNEN       549 // Trainers' Eyes Meet (Boy 1)
 #define HG_SEQ_GS_VS_TRAINER          550 // Battle! (Trainer Battle - Johto Version)
 #define HG_SEQ_GS_WIN1                551 // Victory! (Trainer Battle)
-#define HG_SEQ_GS_R_1_30              552 // Route 30
+#define HG_SEQ_GS_R_1_30              552 // Route 30/Title Screen
 #define HG_SEQ_ME_HYOUKA1             553 // Pokédex Evaluation... No Good!
 #define HG_SEQ_GS_C_KIKYOU            554 // Violet City
 #define HG_SEQ_GS_TO_MADATSUBOMI1     555 // Sprout Tower
@@ -734,7 +734,7 @@
 #define BW_SEQ_BGM_TITLE01            709 // A New Adventure!
 #define BW_SEQ_BGM_POKEMON_THEME      710 // Title Screen
 #define BW_SEQ_BGM_STARTING           711 // Onward to Adventure! (Part 1)
-#define BW_SEQ_BGM_STARTING2          712 // Onward to Adventure! (Part 2)
+#define BW_SEQ_BGM_STARTING2          712 // Onward to Adventure! (Part 2) (Title Screen)
 #define BW_SEQ_BGM_E_OPENING          713 // A Day of Beginnings
 #define BW_SEQ_BGM_T_01               714 // Nuvema Town
 #define BW_SEQ_BGM_VS_RIVAL           715 // Battle! (Cheren/Bianca)                       (TODO: PORTAMENTO!!)
