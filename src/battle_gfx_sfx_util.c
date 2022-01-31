@@ -32,6 +32,7 @@ extern const u8 * const gBattleAnims_General[];
 extern const u8 * const gBattleAnims_Special[];
 extern const struct CompressedSpriteSheet gSpriteSheet_EnemyShadow;
 extern const struct SpriteTemplate gSpriteTemplate_EnemyShadow;
+extern u16 sCurrentMapMusic;
 
 // this file's functions
 static u8 GetBattlePalaceMoveGroup(u16 move);
@@ -1100,18 +1101,23 @@ void HandleLowHpMusicChange(struct Pokemon *mon, u8 battlerId)
 {
     u16 hp = GetMonData(mon, MON_DATA_HP);
     u16 maxHP = GetMonData(mon, MON_DATA_MAX_HP);
+	u16 music = GetCurrentMapMusic();
 
     if (GetHPBarLevel(hp, maxHP) == HP_BAR_RED)
-    {
+    {/*
         if (!gBattleSpritesDataPtr->battlerData[battlerId].lowHpSong)
         {
             if (!gBattleSpritesDataPtr->battlerData[battlerId ^ BIT_FLANK].lowHpSong)
                 PlaySE(SE_LOW_HEALTH);
             gBattleSpritesDataPtr->battlerData[battlerId].lowHpSong = 1;
-        }
+        }*/
+		if (music != BW_SEQ_BGM_BATTLEPINCH){
+			m4aMPlayStop(&gMPlayInfo_BGM);
+			PlayNewMapMusic(BW_SEQ_BGM_BATTLEPINCH);
+		}
     }
     else
-    {
+    {/*
         gBattleSpritesDataPtr->battlerData[battlerId].lowHpSong = 0;
         if (!IsDoubleBattle())
         {
@@ -1122,7 +1128,12 @@ void HandleLowHpMusicChange(struct Pokemon *mon, u8 battlerId)
         {
             m4aSongNumStop(SE_LOW_HEALTH);
             return;
-        }
+        }*/
+		if (music != GetBattleBGM())
+		{
+			m4aSongNumStop(BW_SEQ_BGM_BATTLEPINCH);
+			PlayNewMapMusic(GetBattleBGM());
+		}
     }
 }
 
@@ -1134,7 +1145,7 @@ void BattleStopLowHpSound(void)
     if (IsDoubleBattle())
         gBattleSpritesDataPtr->battlerData[playerBattler ^ BIT_FLANK].lowHpSong = 0;
 
-    m4aSongNumStop(SE_LOW_HEALTH);
+//    m4aSongNumStop(SE_LOW_HEALTH);
 }
 
 u8 GetMonHPBarLevel(struct Pokemon *mon)

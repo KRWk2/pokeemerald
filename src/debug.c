@@ -3063,7 +3063,7 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
     X(MUS_RG_TRAINER_TOWER, "MUS-RG-TRAINER-TOWER") \
     X(MUS_RG_SLOW_PALLET, "MUS-RG-SLOW-PALLET") \
     X(MUS_RG_TEACHY_TV_MENU, "MUS-RG-TEACHY-TV-MENU") \
-     X(HG_SEQ_GS_TITLE              , "HG-SEQ-GS-TITLE") \
+    X(HG_SEQ_GS_TITLE              , "HG-SEQ-GS-TITLE") \
     X(HG_SEQ_GS_POKEMON_THEME      , "HG-SEQ-GS-POKEMON-THEME") \
     X(HG_SEQ_GS_STARTING           , "HG-SEQ-GS-STARTING") \
     X(HG_SEQ_GS_T_WAKABA           , "HG-SEQ-GS-T-WAKABA") \

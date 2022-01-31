@@ -7512,7 +7512,8 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
 		case TRAINER_CLASS_KANTO_LEADER:
-			return HG_SEQ_GS_VS_GYMREADER_KANTO;
+//			return HG_SEQ_GS_VS_GYMREADER_KANTO;
+			return BW_SEQ_BGM_VS_N; // why not?
         default:
             return MUS_VS_TRAINER;
         }
@@ -7634,7 +7635,7 @@ u16 GetBattleBGM(void)
         #endif
         default:
 //            return MUS_VS_WILD; RSE
-			return BW_SEQ_BGM_VS_NORAPOKE;
+			return BW_SEQ_BGM_VS_NORAPOKE; // BW
         }
     }
 }
